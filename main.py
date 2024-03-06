@@ -1,7 +1,8 @@
 import requests
 import bs4
 
-STEAM_URL = "https://steamcommunity.com/market/search?appid=730&q=chef"
+ITEM = "Chef d'Escadron Rouchard | Gendarmerie Nationale"
+STEAM_URL = f"https://steamcommunity.com/market/search?appid=730&q={ITEM}"
 CURRENCY_URL = "https://www.forbes.com/advisor/money-transfer/currency-converter/usd-idr/"
 
 # STEAM SCRAPE
@@ -37,7 +38,8 @@ else:
 idr_result = price * current_value    
 rounded_result = round(idr_result, 3)
 
-body = f"""Item value :
-      USD = ${price},
+body = f"""({ITEM}) value :
+      USD = ${price}
       IDR = Rp.{rounded_result}
       """
+print(body)
