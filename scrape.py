@@ -3,6 +3,7 @@ import bs4
 
 ITEM = "Chef d'Escadron Rouchard | Gendarmerie Nationale"
 
+
 def scrape(s_url, cur_url):
     # STEAM SCRAPE
     s_response = requests.get(url=s_url)
