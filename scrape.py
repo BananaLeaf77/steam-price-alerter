@@ -12,6 +12,10 @@ def scrape(s_url, cur_url):
     steam_soup = bs4.BeautifulSoup(s_data, "html.parser")
 
     select = steam_soup.find(name="span", class_="normal_price")
+    
+    price = 0.0
+    current_value = 0.0
+    
     if select:
         text = select.getText()
         price = float(text.split('$')[1].split()[0])
